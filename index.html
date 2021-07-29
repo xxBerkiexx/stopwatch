@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+
+    <div id="Lap-List-Cntr" class="lap-list-cntr"></div>
+
+    <div id="Stopwatch-Cntr" class="stopwatch-cntr">
+        <div class="row row-column margin-bottom">
+            <div class="time-output-cntr mobile-margin-bottom">
+                <div class="time-label">TOTAL:</div>
+                <div class="time-output">
+                    <h3>
+                        <span id="Total-Minutes" class="digit">00</span>:<span id="Total-Seconds" class="digit">00</span>.<span id="Total-Milliseconds" class="digit">00</span>
+                    </h3>
+                </div>
+            </div>
+            <div class="time-output-cntr no-mobile-margin-left">
+                <div class="time-label">LAP:</div>
+                <div class="time-output">
+                    <h3>
+                        <span id="Lap-Minutes" class="digit">00</span>:<span id="Lap-Seconds" class="digit">00</span>.<span id="Lap-Milliseconds" class="digit">00</span>
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="btn-cntr">
+                <div id="Start-Btn" class="btn green-btn">START</div>
+            </div>
+            <div class="btn-cntr">
+                <div id="Reset-Btn" class="btn">RESET</div>
+                <div id="Lap-Btn" class="btn margin-left btn-disabled">LAP</div>
+            </div>
+        </div>
+    </div>
+    
+    <!--Scripts-->
+    <script src="./js/main.js"></script>
+</body>
+</html>

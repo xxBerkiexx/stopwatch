@@ -1,0 +1,299 @@
+@import "./css-reset.scss";             //CSS reset
+
+$color1: rgb(10, 10, 10);
+$color2: rgb(33, 33, 33);
+$color3: rgb(42, 42, 42);
+$color4: rgb(55, 55, 55);
+$color5: rgb(175, 175, 175);
+$color5hover: rgb(210, 210, 210);
+$color5active: rgb(150, 150, 150);
+$color6: rgb(50, 200, 50);
+$color6hover: rgb(60, 225, 60);
+$color6active: rgb(40, 175, 40);
+$color7: rgb(70, 70, 70);  //Orange is 255, 150, 0
+$color8: rgb(220, 20, 20);
+$color8hover: rgb(230, 50, 50);
+$color8active: rgb(200, 0, 0);
+
+html {
+    transition: .2s;                                    //Animate responsiveness
+}
+
+body {
+    background-color: $color4;
+    color: white;
+}
+
+.margin-left {
+    margin-left: 10px;
+}
+
+//Remove the left margin for mobile
+.no-mobile-margin-left {
+    margin-left: 10px;
+}
+
+.margin-bottom {
+    margin-bottom: 10px;
+}
+
+.stopwatch-cntr {
+    background-color: $color2;                          //Background color
+    position: absolute;                                 //Absolute positioning
+    top: 20px; left: 50%;                               //Center
+    transform: translateX(-50%);                        //Center adjustment
+    border-radius: 10px;                                //Round corners
+    display: flex;                                      //Display contents as flex
+    flex-flow: column;                                  //Flex flows down
+    transition: .2s;                                    //Animate responsiveness
+    & .row {
+        display: flex;                                      //Display contents as flex
+        justify-content: space-between;                     //Space between
+        & .time-output-cntr {
+            background-color: $color4;                          //Background color
+            border-radius: 8px;                                 //Round corners
+            display: flex;                                      //Display contents as flex
+            justify-content: space-between;                     //Space between
+            align-items: center;                                //Vertically center
+            transition: .2s;                                    //Animate responsiveness
+            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3); //Add box shadow
+            & .time-label {
+                background-color: $color2;                          //Background color
+                border-radius: 5px;                                 //Round corners
+                display: flex;                                      //Display contents as flex
+                justify-content: center;                            //Center horzontally
+                align-items: center;                                //Center vertically
+                transition: .2s;                                    //Animate responsiveness
+            }
+            & .time-output h3 {
+                margin: 0px;                                        //Remove unwanted margins
+                & .digit {
+                    text-align: center;                                 //Center the text
+                    display: inline-block;                              //Display side by side
+                }
+            }
+        }
+        & .btn-cntr {
+            display: flex;                                      //Display contents as flex
+            & .btn {
+                color: $color5;                                     //Text color
+                border: 1px solid $color5;                          //Add a border
+                border-radius: 50%;                                 //Make a circle
+                display: flex;                                      //Display contents as flex
+                justify-content: center;                            //Center horizontally
+                align-items: center;                                //Center vertically
+                user-select: none;                                  //Remove highlighting
+                cursor: pointer;                                    //Show it can be clicked
+                transition: .2s;                                    //Animate responsiveness
+                &:hover {
+                    color: $color5hover;
+                    border-color: $color5hover;
+                }
+                &:active {
+                    color: $color5active;
+                    border-color: $color5active;
+                }
+                &-disabled {
+                    opacity: .2;                                        //Make transparent
+                    cursor: default;                                    //Reset cursor
+                    &:hover, &:active {
+                        color: $color5;                                     //Reset text color
+                        border-color: $color5;                              //Reset border color
+                    }
+                }
+            }
+            & .green-btn {
+                color: white;                                     //Text color
+                background-color: $color6;                          //Background color
+                border-color: $color6;                              //Border color
+                &:hover {
+                    color: white;
+                    background-color: $color6hover;
+                    border-color: $color6hover;
+                }
+                &:active {
+                    color: white;
+                    background-color: $color6active;
+                    border-color: $color6active;
+                }
+            }
+            & .red-btn {
+                color: white;
+                background-color: $color8;
+                border-color: $color8;
+                &:hover {
+                    color: white;
+                    background-color: $color8hover;
+                    border-color: $color8hover;
+                }
+                &:active {
+                    color: white;
+                    background-color: $color8active;
+                    border-color: $color8active;
+                }
+            }
+        }
+    }
+}
+
+.lap-list-cntr {
+    width: 0;
+    background-color: $color7;                          //Background color
+    position: absolute;                                 //Absolute positioning
+    left: 50%;                                          //Center
+    transform: translateX(-50%);                        //Center adjustment
+    border-radius: 0px 0px 10px 10px;                   //Round corners
+    display: flex;                                      //Display contents as flex
+    flex-flow: column;                                  //Flex flows down
+    & .list-item-cntr {
+        padding: 0px 7px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & p {
+            margin: 0px;
+        }
+    }
+    & hr {
+        border: 1px solid white;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .stopwatch-cntr {
+        padding: 6px;                                      //Add padding
+        & .row {
+            & .time-output-cntr {
+                padding: 6px;                                       //Add padding
+                width: 240px;                                       //Set width
+                & .time-label {
+                    height: 25px;                                       //Set height
+                    padding: 0 6px;                                     //Add padding on sides
+                }
+                & .time-output h3 {
+                    & .digit {
+                        min-width: 40px;                                        //Set a minimum width so text doesn't shake
+                    }
+                }
+            }
+            & .btn-cntr {
+                & .btn {
+                    width: 55px;                                        //Width
+                    height: 55px;                                       //Height
+                }
+            }
+        }
+    }
+
+    .lap-list-cntr {
+        padding: 15px 10px 0px;
+        top: 135px;                                         //Center
+    }
+}
+
+@media screen and (max-width: 510px) {
+    .no-mobile-margin-left {
+        margin-left: 0px;
+    }
+
+    //Add a bottom margin on mobile only
+    .mobile-margin-bottom {
+        margin-bottom: 6px;
+    }
+
+    .stopwatch-cntr {
+        padding: 6px;                                      //Add padding
+        width: 252px;
+        & .row {
+            & .time-output-cntr {
+                padding: 6px;                                       //Add padding
+                width: 240px;                                       //Set width
+                & .time-label {
+                    height: 25px;                                       //Set height
+                    padding: 0 6px;                                     //Add padding on sides
+                }
+            }
+            & .btn-cntr {
+                & .btn {
+                    width: 55px;                                        //Width
+                    height: 55px;                                       //Height
+                }
+            }
+        }
+        //Flex flows down on mobile
+        & .row-column {
+            flex-flow: column;
+        }
+    }
+
+    .lap-list-cntr {
+        padding: 12px 10px 0px;
+        top: 190px;                                         //Center
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .stopwatch-cntr {
+        padding: 8px;                                      //Add padding
+        & .row {
+            & .time-output-cntr {
+                padding: 8px;                                      //Add padding
+                width: 265px;                                       //Set width
+                & .time-label {
+                    height: 30px;                                       //Set height
+                    padding: 0 8px;                                     //Add padding on sides
+                }
+                & .time-output h3 {
+                    & .digit {
+                        min-width: 45px;                                        //Set a minimum width so text doesn't shake
+                    }
+                }
+            }
+            & .btn-cntr {
+                & .btn {
+                    width: 65px;                                        //Width
+                    height: 65px;                                       //Height
+                }
+            }
+        }
+    }
+
+    .lap-list-cntr {
+        padding: 15px 10px 0px;
+        top: 160px;                                         //Center
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .stopwatch-cntr {
+        padding: 10px;                                      //Add padding
+        & .row {
+            & .time-output-cntr {
+                padding: 10px;                                      //Add padding
+                width: 300px;                                       //Set width
+                & .time-label {
+                    height: 35px;                                       //Set height
+                    padding: 0 10px;                                    //Add padding on sides
+                }
+                & .time-output h3 {
+                    & .digit {
+                        min-width: 50px;                                        //Set a minimum width so text doesn't shake
+                    }
+                }
+            }
+            & .btn-cntr {
+                & .btn {
+                    width: 75px;                                        //Width
+                    height: 75px;                                       //Height
+                }
+            }
+        }
+    }
+
+    .lap-list-cntr {
+        padding: 25px 15px 0px;
+        top: 175px;                                         //Center
+    }
+}

@@ -1,0 +1,404 @@
+/*Quick CSS reset*/
+@import url("https://fonts.googleapis.com/css?family=Poppins:400");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  /*Fill Window*/
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 87.5%;
+  }
+  /*14px*/
+}
+
+@media screen and (min-width: 600px) {
+  html {
+    font-size: 100%;
+  }
+  /*16px*/
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 112.5%;
+  }
+  /*18px*/
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 3rem 0 1.38rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.052rem;
+}
+
+h2 {
+  font-size: 2.441rem;
+}
+
+h3 {
+  font-size: 1.953rem;
+}
+
+h4 {
+  font-size: 1.563rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+small, .text_small {
+  font-size: 0.8rem;
+}
+
+html {
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+body {
+  background-color: #373737;
+  color: white;
+}
+
+.margin-left {
+  margin-left: 10px;
+}
+
+.no-mobile-margin-left {
+  margin-left: 10px;
+}
+
+.margin-bottom {
+  margin-bottom: 10px;
+}
+
+.stopwatch-cntr {
+  background-color: #212121;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.stopwatch-cntr .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.stopwatch-cntr .row .time-output-cntr {
+  background-color: #373737;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: .2s;
+  transition: .2s;
+  -webkit-box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.stopwatch-cntr .row .time-output-cntr .time-label {
+  background-color: #212121;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.stopwatch-cntr .row .time-output-cntr .time-output h3 {
+  margin: 0px;
+}
+
+.stopwatch-cntr .row .time-output-cntr .time-output h3 .digit {
+  text-align: center;
+  display: inline-block;
+}
+
+.stopwatch-cntr .row .btn-cntr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.stopwatch-cntr .row .btn-cntr .btn {
+  color: #afafaf;
+  border: 1px solid #afafaf;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.stopwatch-cntr .row .btn-cntr .btn:hover {
+  color: #d2d2d2;
+  border-color: #d2d2d2;
+}
+
+.stopwatch-cntr .row .btn-cntr .btn:active {
+  color: #969696;
+  border-color: #969696;
+}
+
+.stopwatch-cntr .row .btn-cntr .btn-disabled {
+  opacity: .2;
+  cursor: default;
+}
+
+.stopwatch-cntr .row .btn-cntr .btn-disabled:hover, .stopwatch-cntr .row .btn-cntr .btn-disabled:active {
+  color: #afafaf;
+  border-color: #afafaf;
+}
+
+.stopwatch-cntr .row .btn-cntr .green-btn {
+  color: white;
+  background-color: #32c832;
+  border-color: #32c832;
+}
+
+.stopwatch-cntr .row .btn-cntr .green-btn:hover {
+  color: white;
+  background-color: #3ce13c;
+  border-color: #3ce13c;
+}
+
+.stopwatch-cntr .row .btn-cntr .green-btn:active {
+  color: white;
+  background-color: #28af28;
+  border-color: #28af28;
+}
+
+.stopwatch-cntr .row .btn-cntr .red-btn {
+  color: white;
+  background-color: #dc1414;
+  border-color: #dc1414;
+}
+
+.stopwatch-cntr .row .btn-cntr .red-btn:hover {
+  color: white;
+  background-color: #e63232;
+  border-color: #e63232;
+}
+
+.stopwatch-cntr .row .btn-cntr .red-btn:active {
+  color: white;
+  background-color: #c80000;
+  border-color: #c80000;
+}
+
+.lap-list-cntr {
+  width: 0;
+  background-color: #464646;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-radius: 0px 0px 10px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+.lap-list-cntr .list-item-cntr {
+  padding: 0px 7px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.lap-list-cntr .list-item-cntr p {
+  margin: 0px;
+}
+
+.lap-list-cntr hr {
+  border: 1px solid white;
+}
+
+@media screen and (max-width: 600px) {
+  .stopwatch-cntr {
+    padding: 6px;
+  }
+  .stopwatch-cntr .row .time-output-cntr {
+    padding: 6px;
+    width: 240px;
+  }
+  .stopwatch-cntr .row .time-output-cntr .time-label {
+    height: 25px;
+    padding: 0 6px;
+  }
+  .stopwatch-cntr .row .time-output-cntr .time-output h3 .digit {
+    min-width: 40px;
+  }
+  .stopwatch-cntr .row .btn-cntr .btn {
+    width: 55px;
+    height: 55px;
+  }
+  .lap-list-cntr {
+    padding: 15px 10px 0px;
+    top: 135px;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .no-mobile-margin-left {
+    margin-left: 0px;
+  }
+  .mobile-margin-bottom {
+    margin-bottom: 6px;
+  }
+  .stopwatch-cntr {
+    padding: 6px;
+    width: 252px;
+  }
+  .stopwatch-cntr .row .time-output-cntr {
+    padding: 6px;
+    width: 240px;
+  }
+  .stopwatch-cntr .row .time-output-cntr .time-label {
+    height: 25px;
+    padding: 0 6px;
+  }
+  .stopwatch-cntr .row .btn-cntr .btn {
+    width: 55px;
+    height: 55px;
+  }
+  .stopwatch-cntr .row-column {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+  .lap-list-cntr {
+    padding: 12px 10px 0px;
+    top: 190px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .stopwatch-cntr {
+    padding: 8px;
+  }
+  .stopwatch-cntr .row .time-output-cntr {
+    padding: 8px;
+    width: 265px;
+  }
+  .stopwatch-cntr .row .time-output-cntr .time-label {
+    height: 30px;
+    padding: 0 8px;
+  }
+  .stopwatch-cntr .row .time-output-cntr .time-output h3 .digit {
+    min-width: 45px;
+  }
+  .stopwatch-cntr .row .btn-cntr .btn {
+    width: 65px;
+    height: 65px;
+  }
+  .lap-list-cntr {
+    padding: 15px 10px 0px;
+    top: 160px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .stopwatch-cntr {
+    padding: 10px;
+  }
+  .stopwatch-cntr .row .time-output-cntr {
+    padding: 10px;
+    width: 300px;
+  }
+  .stopwatch-cntr .row .time-output-cntr .time-label {
+    height: 35px;
+    padding: 0 10px;
+  }
+  .stopwatch-cntr .row .time-output-cntr .time-output h3 .digit {
+    min-width: 50px;
+  }
+  .stopwatch-cntr .row .btn-cntr .btn {
+    width: 75px;
+    height: 75px;
+  }
+  .lap-list-cntr {
+    padding: 25px 15px 0px;
+    top: 175px;
+  }
+}
+/*# sourceMappingURL=main.css.map */
